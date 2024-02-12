@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasputin - Curiosita</title>
+    <link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Cirillico&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-NJ+bOA46y4lG9AOtXzdrK6jg6pdWUVjKQxZe2BcPQFc5KcX4tCtXLQMgNr4c/9pRQjQmn7LdLlEn48l18+1gvg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Librerie Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // script for the Scroll Back To Top button
+// Get the button:
+let mybutton = document.getElementById("topBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+    </script>
+    <style>
+        body {
+          background-color: #222;
+          color: #fff;
+        }
+        #commentForm {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+      </style>
+</head>
+
+<body class="text-center">
+
+    <!-- Navbar di Bootstrap -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><span class="russia-text">РаспутинФансите</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="curiosita.html">Curiosità<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="media.html">Media</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a class="navbar-brand ml-auto" href="#">
+                <img src="immagini/logo.png" alt="Rasputin Logo" width="30" height="30" class="d-inline-block align-top">
+            </a>
+        </nav>
+    </div>
+
+    <!-- Sezione Curiosità -->
+    <div id="curiosita" class="container mt-5">
+        <h2 class="mb-4">Curiosità su Rasputin</h2>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="immagini/640px-Alexandra_Fyodorovna_LOC_01137u.jpg" class="card-img-top d-none" alt="Curiosità 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Rasputin era l’amante della zarina russa?</h5>
+                        <p style="color: black"class="card-text d-none">Le voci che Rasputin fosse l’amante dell’imperatrice consorte Aleksandra Fjodorovna, moglie di Nicola II circolavano già durante la sua vita, fin dall’inizio del 1912.</p>
+                        <p style="color: black"class="card-text d-none">Caricature pornografiche, racconti e versi salaci su questo tema erano diffusi in vari strati della società pietroburghese. Questa presunta relazione amorosa ha costituito il mito principale su Rasputin.A Rasputin piaceva molto vantarsi della sua influenza sulla famiglia reale, il che ha portato a una varietà di interpretazioni delle sue parole. Tuttavia, a confermare la voce di una relazione sessuale con l’imperatrice non c’è alcuna prova.</p> 
+                        <p style="color: black"class="card-text d-none">Per molto tempo è stata usata come argomento una presunta lettera personale di Aleksandra Fjodorovna al suo consigliere spirituale: “Che pena per me stare senza di te. Mi tranquillizzo solo quando tu, maestro, siedi accanto a me, e io bacio le tue mani e la mia testa si china sulle tue spalle benedette…”, si legge in una lettera che è stata pubblicata dallo ieromonaco Iliodor (Sergej Trufanov) nel suo libro “Sviatoj chjort” (“Святой чёрт”; “Il santo demonio”), nel quale denigra Rasputin.</p>
+                        <p style="color: black"class="card-text d-none">Ma anche se questa lettera fosse autentica, non sono stati registrati casi in cui Rasputin e l’imperatrice rimasero soli (i loro incontri a palazzo erano pubblici).Non ci sono altre basi solide per questa diceria. I diari e la corrispondenza della famiglia reale non contengono un solo accenno a rapporti intimi tra Rasputin e l’imperatrice. Anche la Commissione straordinaria d’inchiesta del Governo provvisorio (istituita nel 1917 subito dopo la Rivoluzione di febbraio per indagare “sui crimini del regime zarista“) si interessò alla loro relazione, ma gli investigatori non trovarono alcuna prova. È possibile che questa lettera sia stata semplicemente inventata.</p> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="immagini/nicola-ii-romanov-orig.jpeg" class="card-img-top d-none" alt="Curiosità 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Rasputin influenzò fortemente la politica</h5>
+                        <p style="color: black"class="card-text d-none">Un’altra accusa è stata formulata più volte, anche da membri della Duma di Stato: Rasputin avrebbe influenzato fortemente lo zar Nicola II e le politiche da lui perseguite. Questo è citato in molti libri e memorie. Tuttavia, le cose non sono così semplici. </p>
+                        <p style="color: black"class="card-text d-none">Nelle lettere personali la zarina scriveva incessantemente a Nicola II cosa pensava Rasputin della guerra, delle nomine e di altre decisioni politiche. Nella corrispondenza si riferisce a lui come al “nostro amico”, e poi scrive il consiglio di Rasputin su vari temi. </p> 
+                        <p style="color: black"class="card-text d-none">L’influenza di Rasputin crebbe molto dopo il 1905, quando ci fu la prima rivoluzione e il potere dei Romanov fu minacciato, e questo irritò diverse autorità. Ma in che misura i consigli di Rasputin furono presi in considerazione dallo zar? A quanto pare, questo non accade molto spesso. Lo storico Sergej Oldenburg ha studiato le lettere della zarina a Nicola e ha verificato se lo zar abbia seguito i consigli di Rasputin. L’analisi ha mostrato che su questioni di principio Nicola, noto per essere abbastanza influenzabile, tuttavia, molte volte ha fatto di testa sua, senza minimamente ascoltare i consigli del monaco. Questo non avvalora dunque l’ipotesi che l’influenza di Rasputin fosse così estesa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="immagini/Rasputin.jpeg" class="card-img-top d-none" alt="Curiosità 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Rasputin organizzava orge a corte e si ubriacava fino all’inverosimile</h5>
+                        <p style="color: black"class="card-text d-none">Il Dipartimento di Polizia mise sotto sorveglianza il “monaco dello zar” e raccolse vario materiale sul comportamento di Rasputin. Questi materiali includono riferimenti a prostitute in visita e alle sue orge. Tuttavia, le voci secondo cui avrebbe organizzato orge direttamente a Corte con la partecipazione di dame della cerchia ristretta della famiglia reale non sono mai state confermate.</p>
+                        <p style="color: black"class="card-text d-none">Questo, in particolare, scrisse l’investigatore della Commissione Straordinaria d’Inchiesta del Governo Provvisorio, Vladimir Rudnev, dopo aver studiato tutte le prove nel 1917: “Sembra che le avventure amorose di Rasputin non escano dal quadro delle orge notturne con ragazze di facili costumi e cantanti di chansonnette, e talvolta con alcune delle sue fedeli. Per quanto riguarda la sua vicinanza alle signore dell’alta società, nessun materiale è stato ottenuto dalle attività di sorveglianza nel corso delle indagini”. </p>
+                        <p style="color: black"class="card-text d-none">Tuttavia, alcune dame dell’alta società, nelle loro testimonianze, ammisero una relazione intima con Rasputin, ma negarono le voci di orge.</p>
+                        <p style="color: black"class="card-text d-none">Tutte queste informazioni compromettenti furono portate all’attenzione di Nicola II, ma l’imperatore le considerò un’ingerenza oltraggiosa nella sua vita familiare, dal momento che la famiglia reale considerava Rasputin quasi un membro della famiglia. La zarina, poi, a queste storie sui bagordi del “vecchio saggio” non credeva. Pensava che fosse un uomo santo. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="immagini/319px-Tsarevich_Alexei_Nikolaevich.jpg" class="card-img-top d-none" alt="Curiosità 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Rasputin aveva il dono di guarire gli ammalati   </h5>
+                        <p style="color: black"class="card-text d-none">La capacità di Rasputin di guarire gli ammalati è stata raccontata non meno delle sue orge. Proprio grazie alla sua fama di guaritore, si avvicinò alla famiglia reale e divenne presto una persona indispensabile a corte. All’epoca era chiaro che la medicina non era in grado di curare l’emofilia, malattia dell’unico figlio di Nicola II,Aleksej.</p>
+                        <p style="color: black"class="card-text d-none">Ogni contusione gli provocava un’emorragia interna, che poteva durare diversi giorni e procurargli sofferenze indicibili. Ma ci sono molte testimonianze di come, dopo il contatto con Rasputin, l’erede al trono fosse sollevato. Era lui la sua medicina. </p>
+                        <p style="color: black"class="card-text d-none">Ma ci sono altre teorie sulla presunta capacità di guarire di Rasputin. Alcuni ritengono che fosse semplicemente un ciarlatano che si era conquistato la fiducia cieca della zarina. Altri, come il metropolita Veniamin, hanno affermato che Rasputin “non era un ipnotizzatore o un ciarlatano, ma semplicemente aveva la forza di influenzare le persone”. I contemporanei hanno notato che il vecchio saggio era molto bravo a essere convincente, aveva un aspetto appropriato, e uno sguardo pesantemente “ipnotico”.</p>
+                        <p style="color: black"class="card-text d-none">Pare che Rasputin abbia in qualche modo suggestionato la famiglia imperiale e l’erede, tranquillizzandoli con preghiere e discorsi. Ma possiamo dire con certezza che Rasputin non ha curato Alessio dall’emofilia. L’ultimo caso di aggravamento della malattia capitò all’erede a Tobolsk () nel 1918, pochi mesi prima della sua tragica morte.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="immagini/famiglia_romanov.jpeg" class="card-img-top d-none" alt="Curiosità 5">
+                    <div class="card-body">
+                        <h5 class="card-title">Rasputin prediceva il futuro e previde il crollo dell’impero e della dinastia Romanov </h5>
+                        <p style="color: black"class="card-text d-none">Da vivo aveva la reputazione di guaritore, ma l’etichetta di visionario gli è rimasta addosso anche dopo la morte. In particolare, gli viene attribuito il merito di aver previsto la Rivoluzione, la morte dei Romanov e la Terza guerra mondiale.</p>
+                        <p style="color: black"class="card-text d-none">Nel discutere le profezie di Rasputin, si faceva molto spesso riferimento al diario dell’imperatrice Aleksandra Fjodorovna, che vi registrava i pensieri del suo “mentore spirituale”. O a un opuscolo pubblicato nel 1912 intitolato “Pensieri pii” di Rasputin. Ma in entrambe le fonti non viene fatta alcuna previsione.</p>
+                        <p style="color: black"class="card-text d-none">La più famosa profezia del “monaco dello zar”, è quella secondo cui la sua morte avrebbe significato la fine della dinastia Romanov, ed è contenuta nella testimonianza della figlia Matrona. “Quando non ci sarò più, non ci sarà più neanche la Corte imperiale”, avrebbe avvertito. Tuttavia, se Rasputin ha detto questo, allora può anche essere interpretato come una manipolazione, che lo ha aiutato a rimanere nella cerchia ristretta della famiglia regnante quando varie forze tentavano di estrometterlo da lì.</p>
+                        <p style="color: black"class="card-text d-none">Vale anche la pena di considerare che molte delle “profezie” di Rasputin non si sono avverate. Ad esempio, promise una rapida vittoria nella Prima Guerra Mondiale e l’ascesa al trono dello zarevic Aleksej.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="immagini/rasputin-pene.jpg.jpg" class="card-img-top d-none" alt="Curiosità 6">
+                    <div class="card-body">
+                        <h5 class="card-title">La leggenda del pene di Rasputin</h5>
+                        <p style="color: black"class="card-text d-none">Le vicende del pene di Rasputin, secondo la leggenda, cominciano dall’assassinio del mistico russo, nel 1916, da parte di un gruppo di cospiratori gelosi della sua eccessiva influenza a corte, specialmente nei confronti della Zarina; tale influenza si doveva soprattutto al fatto che il primogenito dei Romanov fosse emofiliaco e Rasputin prometteva di poterlo aiutare. Una cameriera avrebbe trovato il membro nella scena del delitto, mentre il cadavere venne gettato nelle acque del fiume Neva dentro un sacco.</p>
+                        <p style="color: black"class="card-text d-none">Nel 1920 un gruppo di esuli russe a Parigi acquistò quel che secondo loro era il pene di Rasputin, adorandolo come fosse una sorta di reliquia. Il membro veniva conservato all'interno di una bara di legno. La figlia di Rasputin, Marie, lo reclamò per sé portandolo in California dove morì nel 1977.</p>
+                        <p style="color: black"class="card-text d-none">Un oloturia. Così il membro di Rasputin scompare nel nulla, fino a quando Michael Augustine lo trova nascosto in un sacchetto di velluto, insieme ad alcuni dei manoscritti di Marie Rasputin. Viene così acquistato dalla casa d'aste Bonham. Ed ecco che i responsabili si accorgono di avere acquisito la proprietà di un Cetriolo di mare.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="commentForm">
+                <h2>Inserisci il tuo commento</h2>
+                <form id="myForm">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="comment">Commento:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+            
+                    <button type="button" onclick="submitForm()">Invia Commento</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="topBtn" title="Vai in cima" style="display: block;">Torna su</button>
+    <footer class="mt-5">
+        <p>&copy;Thomas Pacilio IU a.a. 2023/2024 | Licenza Creative Commons | <a href="plan.html">Web project plan</a></p>
+    </footer>
+</body>
+
+</html>

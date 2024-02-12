@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasputin - Project plan</title>
+    <link rel="stylesheet" href="stile.css">
+
+    <!-- Librerie Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Altre librerie JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <!-- Script personalizzato -->
+    <script src="script.js"></script>
+    <script>
+        // script for the Scroll Back To Top button
+// Get the button:
+let mybutton = document.getElementById("topBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+    </script>
+
+    <style>
+        body {
+          background-color: #222;
+          color: #fff;
+          text-align: center;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        ul, li {
+        list-style-type: none;
+        }
+      </style>
+      <!--metadati dublincore per descrivere la risorsa-->
+      <meta name="DC.Title" content="Rasputin - Il Monaco Folle" />
+      <meta name="DC.Creator" content="Thomas Pacilio" />
+      <meta name="DC.Subject" content="Rasputin" />
+      <meta name="DC.Description" content="Archivio in cui al suo interno viene racchiusa la vita di rasputin e alcuni modi in cui è stato descritto dai media attraverso varie forme" />
+      <meta name="DC.Publisher" content="Github" />
+      <meta name="DC.Date" content="14-01-2024" />
+      <meta name="DC.Format" content="risorsa digitale" />
+      <meta name="DC.Language" content="it" />
+</head>
+
+<body>
+    <!-- Navbar-->
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><span class="russia-text">РаспутинФансите</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="curiosita.html">Curiosità</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="media.html">Media</a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-brand ml-auto" href="#">
+      <img src="immagini/logo.png" alt="Rasputin Logo" width="30" height="30" class="d-inline-block align-top"></a>
+    </div>
+    </nav>
+    <div>
+        <h1>Web Project Plan</h1>
+    </div>
+    <div class="indice text-center">
+        <h2>Indice dei contenuti</h2>
+        <div class="contenuto">
+        <ul>
+            <li><a href="#brief">1. Brief</a></li>
+            <ul>
+                <li><a href="#obiettivi">•1.1 Finalità e obiettivi del progetto</li></a>
+                <li><a href="#pubblico">•1.2 Pubblico di riferimento</a></li>
+                <li><a href="#accesso">•1.3 Accesso alla risorsa</a></li>
+                <li><a href="#contenuti">•1.4 Contenuti</a></li>
+                <ul>
+                    <li><a href="#contenutiprototipo">•1.4.1 Nel prototipo</a></li>
+                    <li><a href="#contenutisviluppi">•1.4.2 Sviluppi futuri</a></li>
+                </ul>
+            </ul>
+            <li><a href="#benchmark">2. Benchmark</a></li>
+            <ul>
+                <li><a href="#idea">2.1 Idea</li></a>
+                <li><a href="#esistente">•2.2 Contenuti esistenti</a></li>
+                <ul>
+                    <li><a href="#Geopop">•2.2.1 Geopop</a></li>
+                    <li><a href="#Youtube">•2.2.2 YouTube</a></li>
+                    <li><a href="#Focus">•2.2.3 Focus</a></li>
+                    <li><a href="#Wikipedia">•2.2.4 Wikipedia</a></li>
+                    <li><a href="#Storica National Geographic">•2.2.5 Storica National Geographic</a></li>
+                    <li><a href="#Raiplay">•2.2.6 Raiplay</a></li>
+                    <li><a href="#Sintesi">•2.2.7 Sintesi</a></li>
+                </ul>
+            </ul>
+            <li><a href="#struttura">3. Struttura</a></li>
+            <ul>
+                <li><a href="#mappaconcetti">•3.1 Mappa dei concetti</a></li>
+                <li><a href="#schemadipendenze">•3.2 Schema delle dipendenze</a></li>
+            </ul>
+            <li><a href="#layout">4. Layout</a></li>
+            <ul>
+                <li><a href="#home">•4.1 La home page</a></li>
+                <ul>
+                    <li><a href="#architetturahome">•4.1.1 L'architettura d'interfaccia</a></li>
+                    <li><a href="#wireframehome">•4.1.2 il wireframe</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <li><a href="#curiosita">4.2 La pagina dei curiosita</a></li>
+                <ul>
+                    <li><a href="#architetturacuriosita">•4.2.1 L'architettura d'interfaccia</a></li>
+                    <li><a href="#wireframecuriosita">•4.2.2 il wireframe</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <li><a href="#media">4.3 La pagina dei media</a></li>
+                <ul>
+                    <li><a href="#architetturamedia">•4.3.1 L'architettura d'interfaccia</a></li>
+                    <li><a href="#wireframemedia">•4.3.2 il wireframe</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <li><a href="#item">4.4 La pagina del singolo media</a></li>
+                <ul>
+                    <li><a href="#architetturaitem">•4.4.1 L'architettura d'interfaccia</a></li>
+                    <li><a href="#wireframeitem">•4.4.2 il wireframe</a></li>
+                </ul>
+            </ul>
+            <li><a href="#usability">5. Usabilità</a></li>
+            <ul>
+                <li><a href="#usabilityarchitettura">•5.1 Architettura d'interfaccia</a></li>
+                <li><a href="#usabilitylayout">•5.2 Layout e scrittura</a></li>
+            </ul>
+            <li><a href="#servizi">6. Servizi</a></li>
+            <ul>
+                <li><a href="#browsing">•6.1 Strumenti di browsing</a></li>
+                <li><a href="#interazione">•6.2 Strumenti di interazione</a></li>
+                <li><a href="#servizisviluppi">•6.3 Sviluppi futuri</a></li>
+            </ul>
+            <li><a href="#bibliografia">7. Bibliografia</a></li>
+            <ul>
+                <li><a href="#bibliografiainformaticaumanistica">•7.1 Per il web project plan e l'informatica umanistica</a></li>
+                <li><a href="#bibliografiacontenuti">•7.2 Per i contenuti</a></li>
+                <li><a href="#bibliografiamappe">•7.3 Per le mappe e il wireframe</a></li>
+                <li><a href="#bibliografialayout">•7.4 Per layout e usabilità</a></li>
+                <li><a href="#bibliografiacodice">•7.5 Per il codice</a></li>                    
+            </ul>
+        </ul>
+    </div>
+    </div>
+    <div id="brief">
+        <h2>1. Brief</h2>
+        
+        <div id="obiettivi">
+            <h3>1.1 Finalità e obiettivi del progetto</h3>
+            <p>Il sito <em>RasputinFanSite</em> o <em>РаспутинФансите</em> ha come obiettivo quello di far conoscere 
+                non solo la storia di Rasputin ma anche come è stato raccontato e soprattutto in che modo il suo personaggio
+                 fino ad oggi è stato utilizzato   dai vari media per raccontare altre storie.  
+                 Il risultato potrebbe interessare non solo gli appassionati di storia ma anche chi grazie alla musica potrebbe avvicinarsi ad un personaggio così tanto particolare. </p>
+        </div>
+        
+        <div id="pubblico">
+            <h3>1.2 Pubblico di riferimento</h3>
+            <p>Il sito non ha un target specifico perché è designato per poter soddisfare un range molto ampio di persone
+                sia adulti sia persone molto giovani grazie a contenuti più accattivanti. </p>
+        </div>
+        
+        <div id="accesso">
+            <h3>1.3 Accesso alla risorsa</h3>
+            <p>Poiché il target non è preciso si deve optare per garantire l’accesso alla risorsa tramite i vari device 
+                come tablet, smartphone e ovviamente anche la versione desktop per pc.</p>
+            <p>Per cui è necessario realizzare un'interfaccia responsive 
+                affinché il sito sia fruibile in maniera corretta con qualsiasi dispositivo.</p>
+        </div>
+        
+        <div id="contenuti">
+            <h3>1.4 Contenuti</h3>
+            <div id="contenutiprototipo">
+                <h4>1.4.1 Nel prototipo</h4>   
+                <p>Per quanto riguarda i contenuti si ricorre ad un'integrazione dei media: 
+                    sono presenti testi, immagini e video.</p> 
+                    
+                <p>ALe immagini comprendono sia il personaggio che anche altri personaggi storici importanti tra la Prima guerra mondiale e la fine dello zarismo. </p> 
+                    
+                <p>I video e i testi menzionati non riguardano solo Rasputin, ma si possono reputare di sua ispirazione,
+                    infatti, è un personaggio così importante che ha portato alla creazione di tantissimi contenuti. </p>
+            </div>
+            <div id="contenutisviluppi">
+                <h4>1.4.2 Sviluppi futuri</h4>
+                <p>Nel proseguire il progetto sarebbe necessario reperire quanti più 
+                    media,libri,musica possibili man mano che escono nuovi prodotti su Rasputin, nel rispetto delle norme relative 
+                    al copyright.</p> 
+
+                <p>Si potrebbe arrivare a mostrare anche fonti storiche che rendano più chiaro il periodo storico di Rasputin e la Russia dell'epoca.</p>
+            </div>
+        </div>
+    
+    </div>
+    
+    <div id="benchmark">
+        <h2>2. Benchmark</h2>
+    
+        <div id="idea">
+            <h3>2.1 Idea</h3>
+            <p>Sul web ad oggi non esiste un sito divulgativo che non racconti la solita storia raccontata sui libri di scuola,questo sito si dovrebbe intendere come un “ricettario” o catalogo di tutta la storia, i contenuti, le curiosità legato al personaggio di Rasputin. </p>
+        </div>
+        
+        <div id="esistente">
+            <h3>2.2 Contenuti esistenti</h3>
+            
+            <div id="Geopop">
+                <h4>2.2.1 Geopop</h4>
+                <p>n questo sito come nei loro video su YouTube cercano di snocciolare la maggior parte della questione in maniera approfondita ma anche sintetica. </p>
+            </div>
+            
+            <div id="YouTube">
+                <h4>2.2.2 YouTube</h4>
+                <p>Un sito che fornisce molti spunti utili per quanto riguarda i servizi 
+                    e le possibilità di interazione offerte all'utente è YouTube.
+                    Dal famoso social il sito <em>RasputinFanSite</em> riprende:</p>
+                    <ul>
+                        <li>la possibilità dell'utente 
+                            di effettuare il login permette una visualizzazione profilata
+                        <li>la possibilità di aggiungere un commento/recensione.</li>
+                    </ul>
+            </div>
+            
+            <div id="Focus">
+                <h4>2.2.3 Focus</h4>
+                <p>Molto simile a Geopop come proposta, rispetto a quest’ultimo aggiunge solo la possibilità di poter ascoltare direttamente sul sito la lezione.  </p>
+            </div>
+
+            <div id="Wikipedia ">    
+                    <h4>2.2.4 Wikipedia</h4>
+                <p>Wikipedia è conosciuto per essere un sito abbastanza affidabile per la lettura di contenuti di carattere storico,</p> 
+                    <p>ovviamente soffre di un problema legato alla stesura dei testi prolissa.  </p>
+                <ul>
+            </div>
+            
+            <div id="Storica National Geographic">
+                <h4>2.2.5 Storica National Geographic</h4>
+                <p>Come Wikipedia, è pregno di contenuti a livello di testo, ma come anche gli altri siti citati manca di qualsivoglia altro media. </p>
+            </div>
+                
+            <div id="Raiplay">
+                <h4>2.2.6 Raiplay</h4>
+                <p>In questo caso in controtendenza è formato di soli contenuti audiovisivi, come i vari video legati alle puntate su Rasputin. </p>
+            </div>
+            <div id="Sintesi">
+                <h4>2.2.7 Sintesi</h4>
+                <p>Sono tutti siti diversi che offrono contenuti diversi, ma che risultano molto utili al mio progetto per potere creare un hub in cui incanalare tutti i vari contenuti che ci sono su Rasputin, così da avere una visione completa della persona e di ciò che ha ispirato. </p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="struttura">
+        <h2>3. Struttura</h2>
+
+        <div id="mappaconcetti">
+            <h3>3.1 Mappa dei concetti</h3>
+            <p>Per la creazione della mappa sono stati presi in prestito alcuni 
+                elementi propri della modellazione concettuale. Quindi, le entità 
+                sono rappresentate da rettangoli, le relazioni da rombi e gli 
+                attributi da ellissi. Questi ultimi sono stati affiancati sia 
+                alle entità sia alle relazioni, per definirne meglio la tipologia.</p>
+            <p>Un esempio è legato alla relazione “interazione”. 
+                È presente il tipo navigazione, perché l'utente, scorrendo la 
+                linea del tempo, interagisce con il sito web e, allo stesso tempo, 
+                naviga tra gli elementi. L'utente interagisce e allo stesso naviga all'interno 
+                del contenuto del sito.</p>
+            <p>Si è cercato di costruire una mappa che fosse percorribile 
+                in tutte le direzioni. Per fare ciò sono stati utilizzati, 
+                come etichette per definire le relazioni tra le entità, dei 
+                sostantivi piuttosto che dei verbi.</p>
+            <img class="mappa-concetti" src="immagini/Flowchart.jpg" alt="mappa concettuale" title="mappa concettuale" />
+        </div>
+        <br><br>
+        <div id="schemadipendenze">
+            <h3>3.2 Schema delle dipendenze</h3>
+            <p>Dalla home page, mediante i 2 link presenti nella navbar, 
+                è possibile raggiungere le altre due pagine che rappresentano il secondo 
+                livello del sito:</p>
+            <ul>
+                <li>dalla pagina curiosita è possibile giungere alla pagina di 
+                    approfondimento relative alle curiosita sulla corte dello zar</li>
+                <li>nella pagina dei media è presente una lista di possibili prodotti da 
+                    cercare sul tema di rasputin come libri,media,musica o manga.
+                </li>
+            </ul>
+            <br><br>
+            <img class="mappa-concetti" src="immagini/schema-dipendenze.jpg" alt="schema delle dipendenze" title="schema delle dipendenze" />
+        </div>
+        <br><br>
+    <div id="layout">
+        <h2>4. Layout</h2>
+        <div id="home">
+            <h3>4.1 La home page</h3>
+                
+            <div id="architetturahome">
+                <h4>4.1.1 L'architettura d'interfaccia</h4>
+                <p>Nell'intestazione, a sinistra, sono presenti:</p>
+                <ul>
+                    <li>• Il Titolo</li>
+                    <li>• link della navbar</li>
+                </ul>
+                <p>Subito sotto si trova il corpo, che contiene:</p>
+                <ul>
+                    <li>•uno slideshow che presenta i personaggi più importanti,
+                        ovvero Rasputin, e i due coniugi Romanov.</li>
+                    <li>•Una linea del tempo, che racchiude la maggio parte degli eventi 
+                        capitati durante la vita di Rasputin.
+                    </li>
+                </ul>
+                <p>Nel piede di pagina, infine, sono presenti elementi 
+                    legati alla metanavigazione come:</p>
+                <ul>
+                    <li>•le indicazioni sul copyright</li>
+                    <li>•le informazioni relative alla data di creazione e 
+                        aggiornamento dei contenuti</li>
+                    <li>•il link per il web project plan</li>
+                </ul>
+                <p>Attualmente, nella home page, manca un canale di navigazione secondaria.
+                 L'inserimento di un menu aggiuntivo nella barra di navigazione principale sta causando alcuni problemi, specialmente su smartphone.</p>
+
+                <p>Poiché gli utenti su dispositivi mobili utilizzano il dito anziché il mouse,
+                la visualizzazione di un menu secondario richiede l'azione di toccare una delle tre etichette presenti nella barra di navigazione principale.
+                Tuttavia, questo processo può risultare prolungato, poiché per passare da un menu secondario all'altro è necessario ripetere l'azione per visualizzare i vari menu. Questo potrebbe superare la pazienza media dell'utente su dispositivi mobili.</p>
+                    
+                <p>Inoltre, considerando lo spazio notevolmente ridotto dello schermo rispetto a una versione desktop, è essenziale prestare attenzione allo spazio disponibile per ciascun link. Una barra di navigazione affollata potrebbe causare errori nel toccare il link desiderato a causa delle dimensioni del polpastrello dell'utente.</p>
+            </div>
+
+            <div id="wireframehome">
+                <h4>4.1.2 Il wireframe</h4>
+                <img class="wireframe" src="immagini/Wireframe.jpg" alt="Il wireframe della home page" title="Il wireframe della home page" />
+            </div>
+
+        </div>
+
+        <div id="curiosita">
+            <h3>4.2 La pagina con i curiosita</h3>
+            <div id="architetturacuriosita">
+                <h4>4.2.1 L'architettura d'interfaccia</h4>
+                <p>Nel corpo della pagina persone si trova la stessa navbar, infatti cambia il
+                    colore del link in base a quello selezionato (Home,curiosita,media).</p>
+                <p>Nella sezione principale ci sono delle card contenenti degli approfondimenti.</p>
+                <p>Inoltre è possibile commentare le varie curiosità con le altre persone che hanno fatto
+                    l'accesso al sito.</p>
+            </div>
+            <div id="wireframecuriosita">
+                <h4>4.2.2 Il wireframe</h4>
+                <img class="wireframe" src="immagini/Wireframe-2.jpg" alt="wireframe della pagina dei curiosita" title="wireframe della pagina dei curiosita" />
+            </div>
+
+        </div>
+
+        <div id="media">
+            <h3>4.3 La pagina dei media</h3>
+            <div id="architetturamedia">
+                <h4>4.3.1 L' architettura d'interfaccia</h4>
+                <p>Nella pagina media si trovano tutti i media presenti sul sito. 
+                    Questi possono essere visualizzati in ordine alfabetico AZ oppure ZA.
+                    Inoltre, i risultati possono essere filtrati per categoria.</p>
+                <p>È stato utilizzato lo stesso sistema delle cards per poter visualizzare i vari media,
+                    con immagini e alcune informazioni fondamentali.</p>
+                <p>Infine c'è una barra di ricerca utile per trovare qualcosa in maniera più diretta, al suo interno c'è
+                una funzione che permette senza aver premuto il pulsante di avere una ricerca basata sui caratteri digitati.</p>
+            </div>
+            <div id="wireframemedia">
+                <h4>4.3.2 Il wireframe</h4>
+                <img class="wireframe" src="immagini/Wireframe-3.jpg" alt="Wireframe della pagina dei media" title="Wireframe della pagina dei media" />
+            </div>
+        </div>
+
+        <div id="item">
+            <h3>4.4 La pagina del singolo media</h3>
+            <div id="architetturaitem">
+                <h4>4.4.1 L'architettura d'interfaccia</h4>
+                <p>Nella prima sezione della pagina si trova il player che 
+                    permette di visionare il media.
+                <p>Sotto è permesso scrivere dei commenti per analizzare la opera in questione
+                solamente dopo aver effettuato l'accesso come nel caso della pagina curiosità.</p>
+            </div>
+            <div id="wireframeitem">
+                <h4>4.4.2 Il wireframe</h4>
+                <img class="wireframe" src="immagini/Wireframe-4.jpg" alt="Il wireframe della pagina del singolo media"title="Il wireframe della pagina del singolo media" />
+            </div>
+        </div>
+    </div>
+
+    <div id="usability">
+        <h2>5. Usabilità</h2>
+        <div id="usabilityarchitettura">
+            <h3>5.1 Architettura d'interfaccia</h3>
+            <p>Per quanto riguarda la struttura dell'interfaccia, sono stati implementati diversi miglioramenti.
+            Innanzitutto, è stata mantenuta la coerenza con le convenzioni comuni:
+            il pulsante per aprire il menu di navigazione principale è posizionato in alto,
+            seguendo la pratica tipica di molti siti per dispositivi mobili. 
+            Questa scelta facilita agli utenti la comprensione immediata di come accedere al sistema di navigazione principale, 
+            anche quando il menu non è visibile all'apertura della home.</p>
+
+            <p>Per quanto riguarda l'architettura in generale:</p>
+            <ul>
+                <li>•non è presente un doppio sistema di navigazione primaria</li>
+                <li>gli strumenti di navigazione primaria hanno sempre la stessa 
+                    posizione al cambiare di pagina</li>
+                <li>•sono stati utilizzati molti box e card per strutturare 
+                    il contenuto su isole tematiche</li>
+                <li>•Non sono presenti le briciole di pane come strumento di orientamento 
+                    rispetto alla gerarchia dei contenuti, però si possono intuire le posizioni
+                    grazie ad un cambiamento cromatico dei link della navbar.</li>
+            </ul>
+            <p> Alcuni altri aspetti rilevanti riguardano le pagine dedicate ai media e alle curiosità. 
+                In primo luogo, è stata presa la decisione di evitare l'implementazione di una paginazione tradizionale,
+                optando invece per il caricamento automatico di nuovi risultati quando l'utente raggiunge il fondo della pagina.</p>
+                Questa scelta è motivata dal fatto che la paginazione, soprattutto su dispositivi mobili, presenta alcune problematiche: </p>
+            <ul>
+                <li>•occupano spazio prezioso</li>
+                <li>•Introduce difficoltà di usabilità, 
+                poiché richiede all'utente di interagire con numeri spesso molto piccoli e vicini tra loro,
+                aumentando significativamente il rischio di commettere errori</li>
+            </ul>
+            <p>Questa scelta, che può portare all'allungarsi smisurato della 
+                pagina, ha avuto come conseguenza l'inserimento di un bottone, 
+                sempre presente in basso a destra, che permette di tornare in 
+                cima alla pagina. In questo modo l'utente ha la possibilità di 
+                tornare immediatamente in cima, nel caso voglia modificare i filtri 
+                o utilizzare la navbar per navigare nel sito.</p>
+            <p>Il bottone è stato inserito nelle pagine che possono diventare molto lunghe, come:</p>
+            <ul>
+                <li>•la pagina dei media</li>
+                <li>•la pagina dell'item</li>
+                <li>•la pagina delle curiosità</li>
+            </ul>
+            <p>L'inserimento del bottone è stato preferito al rendere i filtri sempre visibili, 
+                per una questione di spazio occupato su schermo.</p>
+            <p>Per questo stesso motivo, e per la presenza del bottone per tornare 
+            in cima, si è deciso di evitare la sticky navbar.</p>
+        </div>
+        <div id="usabilitylayout">
+            <h3>Layout e scrittura</h3>
+            <p>Per quanto riguarda il layout sono stati adottati i seguenti 
+                accorgimenti:</p>
+            <ul>
+                <li>tutti gli elementi simili hanno dimensione e stile 
+                    pressoché uguali (bottoni, card, icone)</li>
+                <li>la palette di colori è la stessa in tutte le pagine del sito</li>
+                <li>il contrasto dei colori è stato utilizzato per attirare 
+                    l'attenzione su elementi importanti della pagina e si
+                    è voluto richiamare la dark mode che è stata introdotta 
+                    nella maggior parte dei siti, per questo motivo si è utilizzato 
+                    un colore scuro per lo sfondo.
+                </li>
+            </ul>
+            <p>Per quanto riguarda la scrittura:</p>
+
+            <p>Visto le informazioni da veicolare erano tante, 
+                si è deciso di ricorrere alla strategia della rivelazione progressiva. 
+                Nella home, ad esempio, è presente una introduzione alla vita di rasputin,
+                per cui si è deciso di agire con una linea del tempo, in cui si possa scorrere 
+                da un anno all'altro in base a ciò che si desidera sapere.</p>
+            <p>Le stesse card dei media presentano delle descrizioni estremamente brevi. 
+                Nelle pagina delle curiosità, invece, le descrizioni sono più 
+                lunghe e dettagliate.</p>
+        </div>
+    </div>
+
+    <div id="servizi">
+        <h2>6. Servizi</h2>
+        <div id="browsing">
+            <h3>6.1 Strumenti di browsing</h3>
+            <ol>
+                <li>Search bar nella hero section della pagina dei media</li>
+                <li>navbar orizzontale</li>
+            </ol>
+            <p>Nella home, inoltre, è possibile visualizzare una lista 
+                di immagini di Rasputin ed i coniugi Romanov che fungono anche
+                da link per spostarsi direttamente attraverso un bottone alla pagina 
+                delle curiosità che li riguardano.</p>
+            <p>Per quanto riguarda il wordcloud presente nella home, 
+                sarebbe interessante rendere tutte le parole presenti link 
+                che rimandano a pagine del sito inerenti.</p>
+            
+        </div>
+        <div id="interazione">
+            <h3>6.2 Strumenti di interazione</h3>
+            <ul>
+                <li>Menus</li>
+                <ol>
+                    <li>accordion</li>
+                    <li>tabs</li>
+                    <li>sidenav overlay</li>
+                    <li>clickable dropdown</li>
+                    <li>button group</li>
+                </ol>
+                <li>Images</li>
+                <ol>
+                    <li>slideshow</li>
+                    <li>hero image</li>
+                    <li>responsive image</li>
+                </ol>
+                <li>Buttons</li>
+                <ol>
+                    <li>icon button</li>
+                    <li>round button</li>
+                    <li>scroll to top button</li>
+                </ol>
+                <li>Forms</li>
+                <ol>
+                    <li>search button</li>
+                </ol>
+                <li>More</li>
+                <ol>
+                    <li>cards</li>
+                </ol>
+            </ul>
+        </div>
+        <div id="servizisviluppi">
+            <h3>6.3 Sviluppi futuri</h3>
+            <p>Nel prototipo è stata implementata una versione molto 
+                semplificata dell'idea dei media. In uno sviluppo futuro 
+                sarebbe necessario implementare molti aspetti aggiuntivi:</p>
+            <ul>
+                <li>interattività maggiore con le card, per esempio con un click alle immagini 
+                ti porti direttamente alla pagina con l'item desiderato.
+                </li>
+                <li>
+                Inoltre la possibilità di aggiornarsi in continuazione grazie ad un algoritmo 
+                che possa cercare le nuove uscite su rasputin e che le inserisca.
+                </li>
+            </ul>
+            <p>Inoltre, andrebbe sviluppata l'integrazione con i social media, 
+                focalizzandosi sui seguenti aspetti:</p>
+            <ul>
+                <li>creare un canale YouTube per pubblicare sia gli spezzoni 
+                    che alcuni media completi</li>
+                <li>dare la possibilità all'utente del sito <em>RasputinFanSite</em> di condividere i media, le pagine di approfondimento sui vari social</li>
+            </ul>
+            
+        </div>
+    </div>
+
+    <div id="bibliografia">
+        <h2>7. Bibliografia</h2>
+        <div id="bibliografiainformaticaumanistica">
+            <h3>7.1 Per il web project plan e l'informatica umanistica</h3>
+            <ul>
+                <li>Francesca Tomasi, <cite>Metodologie informatiche e discipline umanistiche</cite>, 2008</li>
+                <li>Francesca Tomasi, <cite>Organizzare la conoscenza: 
+                    Digital Humanities e Web semantico. Un percorso tra archivi, 
+                    biblioteche e musei</cite>, 2022</li>
+                <li>Francesca Tomasi, slide del corso di Informatica Umanistica, a.a. 2023-2024</li>
+            
+            </ul>
+        </div>
+        <div id="bibliografiacontenuti">
+            <h3>7.2 Per i contenuti</h3>
+            <ul>
+                <li>Wikipedia</li>
+                <li>Wikimedia Commons</li>
+                <li>Storica National Geographic</li>
+                <li>Geopop</li>
+                <li>Focus</li>
+            </ul>
+        </div>
+        <div id="bibliografiamappe">
+            <h3>7.3 Per le mappe e il wireframe</h3>
+            <ul>
+                <li>Miro</li>
+            </ul>
+        </div>
+        <div id="bibliografialayout">
+            <h3>7.4 Per layout e usabilità</h3>
+            <ul>
+                <li>Raluca Budiu, Jakob Nielsen, <cite>Mobile Usability</cite>, 2012</li>
+                <li>Jasse James Garrett, <cite>The elements of user experience. 
+                    User centered design for the web and beyond</cite>, 2010</li>
+                <li>https://www.wordclouds.com/</li>
+                <li>https://fontjoy.com/</li>
+                <li>https://coolors.co/</li>
+            </ul>
+        </div>
+        <div id="bibliografiacodice">
+            <h3>7.5 Per il codice</h3>
+            <ul>
+                <li>Martina Dello Buono, slide per il laboratorio del corso di informatica umanistica, a.a. 2023-2024</li>
+                <li>Jon Duckett, <cite>Html&#38;Css. Design and build website</cite>, 2014</li>
+                <li>https://www.w3schools.com/</li>
+                <li>https://stackoverflow.com/</li>
+            </ul>
+            <p>Come editor si è utilizzato Visual Studio Code.</p>
+        </div>
+    </div>
+</div>
+<button onclick="topFunction()" id="topBtn" title="Vai in cima" style="display: block;">Torna su</button>
+    <footer>
+      <p>&copy;Thomas Pacilio IU a.a. 2023/2024 | Licenza Creative Commons | <a href="plan.html">Web project plan</a></p>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+

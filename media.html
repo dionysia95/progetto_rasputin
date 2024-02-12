@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasputin - Media</title>
+    <link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Cirillico&display=swap">
+    <!-- Librerie Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // script for the Scroll Back To Top button
+// Get the button:
+let mybutton = document.getElementById("topBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+    </script>
+    <style>
+body {
+    background-color: #222;
+    color: #fff;
+}
+
+#contenitoreMedia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 33%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+.card-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+}
+
+.card-text {
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+</style>
+</head>
+
+<body class="text-center">
+
+    <!-- Navbar di Bootstrap -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><span class="russia-text">РаспутинФансите</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="media.html">Media <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="curiosita.html">Curiosità</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <a class="navbar-brand ml-auto" href="#">
+                <img src="immagini/logo.png" alt="Rasputin Logo" width="30" height="30" class="d-inline-block align-top">
+            </a>
+        </nav>
+    </div>
+    <div class="container mt-3">
+        <!-- Barra di ricerca con Bootstrap -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Cerca..." aria-label="Cerca" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Cerca</button>
+            </div>
+        </div>
+
+    <!-- Contenitore media con filtro e card -->
+    <div class="container mt-3">
+        <div class="row">
+            <div class="mt-3">
+                <!-- Ordinamento -->
+                <label>Ordina:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ordinamento" id="az" value="az" checked>
+                    <label class="form-check-label" for="az">A-Z</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="ordinamento" id="za" value="za">
+                    <label class="form-check-label" for="za">Z-A</label>
+                </div>
+                
+                <!-- Filtro per tipo di media -->
+                <label class="mt-3">Filtra per tipo:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="libro" id="filtroLibro">
+                    <label class="form-check-label" for="filtroLibro">Libri</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="musica" id="filtroMusica">
+                    <label class="form-check-label" for="filtroMusica">Musica</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="manga" id="filtroManga">
+                    <label class="form-check-label" for="filtroManga">Manga</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="film" id="filtroFilm">
+                    <label class="form-check-label" for="filtroFilm">Film</label>
+                </div>
+                <button class="btn btn-secondary mt-3">Reset Filtri</button>
+            </div>
+
+            <!-- Contenitore delle card -->
+            <div class="col-md-9">
+                <div id="contenitoreMedia" class="row">
+                    <!-- Card 1 - Libro -->
+                    <div class="card libro" data-categoria="libro">
+                        
+                        <img src="immagini/libro_rasputin1.jpeg" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin</h5>
+                            <p class="card-text">Autore/i: Massimo Grillandi</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 1979</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 - Manga -->
+                    <div class="card manga" data-categoria="manga">
+                        
+                        <img src="immagini/rasputin-il-patriota.jpeg" class="card-img-top" alt="Copertina Manga">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin il patriota</h5>
+                            <p class="card-text">Autore/i: Junji Ito e Takashi Nagasaki</p>
+                            <p class="card-text">Genere: Politica, Storico, Thriller</p>
+                            <p class="card-text">Anno di pubblicazione: 2010-2012</p>
+                        </div>
+                    </div>
+                    <div class="card film" data-categoria="film">
+                        
+                        <img src="immagini/the-fall-of-the-romanoffs.jpeg" class="card-img-top" alt="Copertina Film">
+                        <div class="card-body">
+                            <h5 class="card-title">La caduta dei romanov</h5>
+                            <p class="card-text">Regia: Herbert Brenon</p>
+                            <p class="card-text">Genere: Storico, drammatico</p>
+                            <p class="card-text">Anno di pubblicazione: 1917</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="card film" data-categoria="film">
+                        
+                        <img src="immagini/Rasputin-il demone nero.jpeg" class="card-img-top" alt="Copertina Film">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin - Il demone nero</h5>
+                            <p class="card-text">Regia: Uli Edel</p>
+                            <p class="card-text">Genere: Horror, drammatico</p>
+                            <p class="card-text">Anno di pubblicazione: 1996</p>
+                        </div></div>
+                    
+                    <div class="card film" data-categoria="film">
+                        
+                        <img src="immagini/Agonia.jpeg" class="card-img-top" alt="Copertina Film">
+                        <div class="card-body">
+                            <h5 class="card-title">Agonia</h5>
+                            <p class="card-text">Regia: Ėlem Germanovič Klimov</p>
+                            <p class="card-text">Genere: Storico, drammatico</p>
+                            <p class="card-text">Anno di pubblicazione: 1981</p>
+                        </div></div>
+                    
+                    <div class="card film" data-categoria="film">
+                        
+                        <img src="immagini/Nicola e Alessandra.jpeg" class="card-img-top" alt="Copertina Film">
+                        <div class="card-body">
+                            <h5 class="card-title">Nicola e Alessandra</h5>
+                            <p class="card-text">Regia: Franklin J. Schaffner</p>
+                            <p class="card-text">Genere: Storico,drammatico,romantico</p>
+                            <p class="card-text">Anno di pubblicazione: 1971</p>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="card libro" data-categoria="libro">
+                        
+                        <img src="immagini/madmonkofrussiai00trufuoft_0001.jpg" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">The mad monk of Russia: Iliodor</h5>
+                            <p class="card-text">Autore/i: Sergei Michailovich Trufanov</p>
+                            <p class="card-text">Genere: autobiografico, storico</p>
+                            <p class="card-text">Anno di pubblicazione: 1918</p>
+                        </div></div>
+
+                    <div class="card musica" data-categoria="musica">
+                        
+                        <img src="immagini/rasputin_lover.jpeg" class="card-img-top" alt="Copertina Musica">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin</h5>
+                            <p class="card-text">Artista: Boney M.</p>
+                            <p class="card-text">Genere: Reggae,R&B/soul,Pop,</p>
+                            <p class="card-text">Halloween music</p>
+                            <p class="card-text">Anno di pubblicazione: 1978</p>
+                            <button class="btn btn-primary mt-2">
+                            <a href="item.html" style="color:#fff">Scopri di più</a>
+                            </button>
+                        </div></div>
+                    
+                    <div class="card musica" data-categoria="musica">
+                        
+                        <img src="immagini/rasputin_dance.jpeg" class="card-img-top" alt="Copertina Musica">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin/Dance</h5>
+                            <p class="card-text">Artista: Boney M.</p>
+                            <p class="card-text">Genere:  Musica house</p>
+                            <p class="card-text">Anno di pubblicazione: 2010</p>
+                        </div></div>
+                    
+                    <div class="card libro" data-categoria="libro">
+                        
+                        <img src="immagini/burattinaio.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">Il burattinaio dell'ultimo zar:</h5> 
+                            <h5 class="card-title">Grigorij Rasputin</h5>
+                            <p class="card-text">Autore/i: Marco Natalizi</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 2016</p>
+                        </div></div>
+                    
+                    <div class="card libro" data-categoria="libro">
+                        
+                        <img src="immagini/libro_rasputin2.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin</h5>
+                            <p class="card-text">Autore/i: GIAN DAULI</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 1934</p>
+                        </div></div>
+                    
+                    <div class="card libro" data-categoria="libro">
+                        
+                        <img src="immagini/libro_rasputin3.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin:La fine di un regime</h5>
+                            <p class="card-text">Autore/i: J.W. Bienstock</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 1918    </p>
+                        </div></div>
+                    
+                    
+
+                    <div class="row">
+                    <div class="card libro" data-categoria="libro">
+                        <div class="col-md-12">
+                        <img src="immagini/libro_rasputin4.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin</h5>
+                            <p class="card-text">Autore/i: Andrej Amal’rick</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 1997</p>
+                        </div></div></div>
+                    
+                    <div class="card libro" data-categoria="libro">
+                        <div class="col-md-12">
+                        <img src="immagini/libro_rasputin5.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin</h5>
+                            <p class="card-text">Autore/i: Henri Troyat</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 1998</p>
+                        </div></div></div>
+                    
+                    <div class="card libro" data-categoria="libro">
+                        <div class="col-md-12">
+                        <img src="immagini/libro_rasputin6.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin: </h5>
+                            <h5 class="card-title">Il monaco nero e </h5>
+                            <h5 class="card-title">la corte dell’ultimo zar</h5>
+                            <p class="card-text">Autore/i: Andrej Amal’rick</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 2013</p>
+                        </div></div></div>
+                    </div>
+                    
+
+                    <div class="row">
+                    <div class="card libro" data-categoria="libro">
+                        
+                        <img src="immagini/libro_rasputin7.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">L’oracolo di Rasputin:</h5>
+                            <h5 class="card-title">con i dischi magici </h5>
+                            <h5>per la consultazione pratica</h5>
+                            <p class="card-text">Autore/i: Manteia</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 2023</p>
+                        </div></div>
+                   
+                    <div class="card libro" data-categoria="libro">
+                        
+                        <img src="immagini/libro_rasputin8.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">L’ultimo inverno di Rasputin</h5>
+                            <p class="card-text">Autore/i: Dmitrij Miropol’skij</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 2019</p>
+                        </div></div>
+                    
+                    <div class="card libro" data-categoria="libro">
+                        
+                        <img src="immagini/libro_rasputin9.jpg.webp" class="card-img-top" alt="Copertina Libro">
+                        <div class="card-body">
+                            <h5 class="card-title">Rasputin: L’ombra del monaco</h5>
+                            <p class="card-text">Autore/i: Miriam Palombi</p>
+                            <p class="card-text">Genere: Storico</p>
+                            <p class="card-text">Anno di pubblicazione: 2021</p>
+                        </div></div>
+                    </div>
+                    <div class="card film" data-categoria="film">
+                        <div class="col-md-12">
+                        <img src="immagini/Anastasia.png" class="card-img-top" alt="Copertina Film">
+                        <div class="card-body">
+                            <h5 class="card-title">Anastasia</h5>
+                            <p class="card-text">Regia: Don Bluth, Gary Goldman</p>
+                            <p class="card-text">Genere: Storico, drammatico,</p>
+                            <p class="card-text"> commedia, documentario</p>
+                            <p class="card-text">Anno di pubblicazione: 1997</p>
+                        </div></div></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="topBtn" title="Vai in cima" style="display: block;">Torna su</button>
+    <footer class="mt-4">
+        <p>&copy;Thomas Pacilio IU a.a. 2023/2024 | Licenza Creative Commons | <a href="plan.html">Web project plan</a></p>
+    </footer>
+
+</body>
+
+</html>

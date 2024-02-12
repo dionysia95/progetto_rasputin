@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasputin - Item</title>
+    <link rel="stylesheet" href="stile.css">
+
+    <!-- Librerie Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Script personalizzato -->
+    <script src="script.js"></script>
+    <script>
+        // script for the Scroll Back To Top button
+// Get the button:
+let mybutton = document.getElementById("topBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+    </script>
+    <style>
+        body {
+          background-color: #222;
+          color: #fff;
+        }
+        #video-container {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; 
+    }
+        label {
+    display: block;
+    margin-bottom: 5px; /* Aggiunge uno spazio tra le etichette e gli input */
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%; /* Fai sì che l'input occupi l'intera larghezza del suo contenitore */
+    max-width: 400px; /* Imposta una larghezza massima per evitare che l'input occupi l'intera larghezza */
+    box-sizing: border-box; /* Include il padding e il bordo nella larghezza dell'elemento */
+    margin: 0 auto; /* Centra l'elemento orizzontalmente */
+    margin-bottom: 10px; /* Aggiunge uno spazio tra gli input e il successivo elemento */
+}
+
+button {
+    display: block;
+    margin: 10px auto; /* Centra il pulsante orizzontalmente e aggiunge uno spazio sopra e sotto */
+}
+ 
+      </style>
+      <!--metadati dublincore per descrivere la risorsa-->
+      <meta name="DC.Title" content="Rasputin - Il Monaco Folle" />
+      <meta name="DC.Creator" content="Thomas Pacilio" />
+      <meta name="DC.Subject" content="Rasputin" />
+      <meta name="DC.Description" content="Archivio in cui al suo interno viene racchiusa la vita di rasputin e alcuni modi in cui è stato descritto dai media attraverso varie forme" />
+      <meta name="DC.Publisher" content="Github" />
+      <meta name="DC.Date" content="14-01-2024" />
+      <meta name="DC.Format" content="risorsa digitale" />
+      <meta name="DC.Language" content="it" />
+</head>
+
+<body class="text-center">
+    <!-- Navbar-->
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><span class="russia-text">РаспутинФансите</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html"><span class="sr-only">(current)</span>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="curiosita.html">Curiosità</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="media.html">Media</a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-brand ml-auto" href="#">
+      <img src="immagini/logo.png" alt="Rasputin Logo" width="30" height="30" class="d-inline-block align-top"></a>
+    </div>
+    </nav>
+    <script defer src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var player;
+
+        function toggleAccordion(elementId) {
+            var accordionContent = document.getElementById(elementId);
+            if (accordionContent.style.display === "block") {
+                accordionContent.style.display = "none";
+                if (player) {
+                    player.pauseVideo();
+                }
+            } else {
+                accordionContent.style.display = "block";
+                if (player) {
+                    player.playVideo();
+                }
+            }
+        }
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('video-container', {
+                height: '315',
+                width: '560',
+                videoId: '16y1AkoZkmQ',
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.pauseVideo();
+        }
+    </script>
+    <!-- Gestione del player video-->
+    <div class="accordion">
+        <div class="accordion-header" onclick="toggleAccordion('video-container')">
+        <h2>Guarda il video</h2>
+    </div>
+    </div>
+    <div id="video-container" class="accordion-content">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/16y1AkoZkmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div id="commentForm">
+        <h2>Inserisci il tuo commento</h2>
+        <form id="myForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="comment">Commento:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+    
+            <button type="button" onclick="submitForm()">Invia Commento</button>
+        </form>
+    </div>
+    <button onclick="topFunction()" id="topBtn" title="Vai in cima" style="display: block;">Torna su</button>
+    <footer>
+      <p>&copy;Thomas Pacilio IU a.a. 2023/2024 | Licenza Creative Commons | <a href="plan.html">Web project plan</a></p>
+    </footer>
+</body>
+
+</html>
+
